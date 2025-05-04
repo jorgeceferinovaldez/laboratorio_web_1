@@ -1,0 +1,48 @@
+/* 1ero. Propiedad de sombras al texto */
+h1, p{
+    text-shadow: 5px 5px 3px black;
+    /* 1er valor el desplazamiento de la sombra hacia la derecha
+    2do valor el desplazamiento de la sombra hacia abajo
+    3er valor la intensidad de la sombra
+    4to */
+}
+
+/* 2do. */
+/* PREFIJOS DE LOS NAVEGADORES */
+/* SON PEQUEÑAS MODIFICACIONES QUE ANTEPONEMOS 
+    A TODAS LAS PROPIEDADES CSS QUE NO SON BIEN INTERPRETADOS POR LOS NAVEGADORES */
+
+/*
+
+-moz-: Para navegadores basados en Gecko como Mozilla
+
+-webkit-: Para navegadores basados en Webkit, como Chrome
+
+-o-: Para Opera
+
+-ms-: Para Internet Explorer y Edge
+
+*/ 
+
+img{
+    /* 2do. a */
+    width: 500px;
+
+    /* 2do. c */
+    -webkit-box-shadow: 5px 5px 3px #b01a1a;
+    -moz-box-shadow: 5px 5px 3px #b01a1a;
+    -o-box-shadow: 5px 5px 3px #b01a1a;
+    -ms-box-shadow: 5px 5px 3px #b01a1a;
+    /* 2do d. Como se que prefijo necesita cada navegador?
+    En https://shouldiprefix.com/ podemos ver */
+    /* 2do b. Agregamos la sombra para la imagen */
+    box-shadow: 5px 5px 3px #b01a1a;
+}
+
+/* 2do. e */
+/* Para evitar tener que revisar propiedad por propiedad. */
+/* Usaremos una herramienta. */
+    /* 1.- Buscamos en google: prefixfree */
+    /* 2.- Los descargamos y lo llevamos a nuestro proyecto. */
+    /* 3.- Creamos un directorio/carpeta js y dentro copiamos el archivo prefixfree.min.js */
+    /* En nuestro archivo HTMl lo enlazamos con la etiqueta script. */
