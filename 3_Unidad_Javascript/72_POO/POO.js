@@ -16,6 +16,7 @@
 
 // var boleano = new Boolean(true);
 
+
 // CLASES DE JAVASCRIPT COMPUESTAS
 
 // var arreglos = new Array('Alejandro', 'Maria', 'Pedro');
