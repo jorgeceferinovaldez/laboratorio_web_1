@@ -262,6 +262,7 @@ header{
 		}
 	}
 
+	/*Chef*/
 	.chef{
 		background: @negro-custom;
 		padding: 5.625rem 0;
@@ -327,45 +328,47 @@ header{
 		}
 	}
 
+	/*Menu Platos*/
 	.menu-platos{
-		padding: 5.625rem 0;
+		padding: 5.625rem 0; // Espacio superior e inferior 
 
 		.container{
 			.titulo-seccion{
 				h2{
-					text-align: center;
+					text-align: center; 
 				}
 			}
 
 			.contenedor-menu{
-				margin-top: 2.5rem;
+				margin-top: 2.5rem; // Espacio entre el título y el menú
 
 				.encabezado{
 					font-weight: 600;
 					font-family: @fuente-secundaria;
-					letter-spacing: 0.1em;
-					text-transform: uppercase;
-					list-style: none;
-					display: flex;
-					justify-content: center;
+					letter-spacing: 0.1em; // Espacio entre letras
+					text-transform: uppercase; 
+					list-style: none; // Elimina los puntos de la lista
+					display: flex; // Utiliza flexbox para alinear los elementos
+					justify-content: center; // Centra los elementos horizontalmente
 
+					// Ahora quiero darle estilo a los elementos de la lista o sea los enlaces
 					li{
 						a{
-							font-size: 0.75rem;
-							padding: 0 1.4375rem 1.125rem 1.4375rem;
-							display: block;
-							cursor: pointer;
-							-webkit-transition: all .3s ease;
+							font-size: 0.75rem; // En relacion a la fuente principal
+							padding: 0 1.4375rem 1.125rem 1.4375rem; // Espacio alrededor del enlace arriba-derecha-abajo-izquierda
+							display: block; // Hace que el enlace ocupe todo el espacio del elemento li
+							cursor: pointer; // Cambia el cursor al pasar sobre el enlace
+							-webkit-transition: all .3s ease; // Transición suave para todos los cambios de estilo
 							-o-transition: all .3s ease;
 							transition: all .3s ease;
-							border-bottom: 2px solid transparent;
+							border-bottom: 2px solid transparent; // Línea debajo del enlace, inicialmente transparente
 
-							&:hover{
+							&:hover{ //Luego de pasar el mouse por encima
 								color:@dorado;
 							}
 						}
 
-						&.active{
+						&.active{// Clase para el enlace activo
 							a{
 								color: @dorado;
 								border-bottom: 2px solid @dorado;
@@ -375,53 +378,55 @@ header{
 				}
 
 				.contenido{
-					max-width: 50rem;
-					margin: 0 auto;
-					margin-top: 2.5rem;
-					border: 6px double @gris-claro;
-					padding: 0 2.25rem;
+					max-width: 50rem; // Ancho máximo del contenedor de contenido
+					margin: 0 auto; // Centra el contenedor de contenido
+					margin-top: 2.5rem; // Espacio entre el encabezado y el contenido
+					border: 6px double @gris-claro; // Borde doble alrededor del contenido
+					padding: 0 2.25rem; // Espacio interno del contenedor de contenido
 
-					>div{
-						display: none;
-						-webkit-transition: all .3s ease;
+					/* Necesito que el contenido sea oculto por defecto y que se muestre cuando se haga clic en el enlace correspondiente */
+					>div{ // Significa que a los divs hijos directos de este contenedor
+						display: none; // Oculta el contenido por defecto
+						-webkit-transition: all .3s ease; // Cuando se muestren que lo hagan con efecto
 						-o-transition: all .3s ease;
 						transition: all .3s ease;
-					}
+					} // Luego de esto si refresco la pagina el contenido no se muestra, por lo que necesito una clase para mostrarlo
 
-					.active{
+					.active{ // Al que tenga la clase active se le mostrará el contenido
 						display: block;
 					}
 
+					// Ahora voy a darle estilo a los items del menú
 					.item{
-						display: flex;
-						justify-content:space-between;
-						flex-wrap:wrap;
-						align-items:center;
-						padding: 2.25rem 0;
-						border-bottom: 1px solid @gris-claro;
+						display: flex; // Utiliza flexbox para alinear los elementos
+						justify-content:space-between; // Espacio entre los elementos
+						flex-wrap:wrap; // Permite que los elementos se ajusten en varias líneas si es necesario
+						align-items:center; // Alinea los elementos verticalmente al centro
+						padding: 2.25rem 0; // Espacio interno de los items arriba y abajo, y 0 a los lados
+						border-bottom: 1px solid @gris-claro; // Línea debajo de cada item
 
-						.col.izq{
-							width: 70%;
+						.col.izq{ // Columna izquierda para la descripción del plato
+							width: 70%; // Ocupa el 70% del ancho
 
 							h3{
-								font-size: 1.5rem;
-								font-weight: 400;
-								margin-bottom: 0.625rem;
+								font-size: 1.5rem; // Tamaño de fuente del nombre del plato
+								font-weight: 400; // Peso de la fuente
+								margin-bottom: 0.625rem; // Espacio debajo del nombre del plato
 							}
 							p{
-								font-size: 1rem;
-								color: #777;
+								font-size: 1rem; // Tamaño de fuente de la descripción del plato
+								color: #777; // Color del texto de la descripción
 							}
 						}
 
-						.col.der{
-							width: 30%;
-							text-align: center;
-							font-size: 2.1875rem;
+						.col.der{ // Columna derecha para el precio del plato
+							width: 30%; // Ocupa el 30% del ancho
+							text-align: center; // Centra el texto del precio
+							font-size: 2.1875rem; // Tamaño de fuente del precio
 						}
 					}
 				}
 			}
 		}
-	}
+	}/*Menu Platos*/
 }

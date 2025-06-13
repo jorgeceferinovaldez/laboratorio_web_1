@@ -1,8 +1,9 @@
 /*-------------------------------------*/
+/* 1. Creare variables como javascript */
 /*Variables*/
 /*-------------------------------------*/
 
-/*Colores*/
+/*1.a Colores*/
 @negro-custom: #141618;
 @blanco: #fff;
 @texto-oscuro: #303133;
@@ -10,35 +11,39 @@
 @dorado: #b4975a;
 @gris-claro: #eaeaea;
 
-/*Fuentes*/
+/* 1.b Fuentes*/
 @fuente-principal: 'Playfair Display', serif;
 @fuente-secundaria: 'Poppins', serif;
 
 /*-------------------------------------*/
-/*Generales*/
+/* 2. Creo los estilos Generales*/
 /*-------------------------------------*/
 
+// 2.a Estilos Generales
 *{
 	margin:0;
 	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box; // Lo hacemos cuando le digamos que tenga un ancho de 200px y le agregemos padding el ancho siga siendo 200px
+	-moz-box-sizing: border-box; // Agregamos compatibilidad con Firefox
+	box-sizing: border-box; 
 }
 
+// 2.b Estilos de la fuente
 body{
 	font-size: 16px;
-	font-family: @fuente-principal;
-	color: @texto-oscuro;
+	font-family: @fuente-principal; // Usamos la variable de la fuente principal
+	color: @texto-oscuro; // Usamos la variable del color de texto oscuro
 }
 
+// 2.c Estilo del contenedor
 .container{
 	width: 90%;
 	max-width: 1080px;
-	margin: 0 auto;
+	margin: 0 auto; // Centramos el contenedor
 }
 
+// 2.d Estilo de las imágenes
 img{
-	vertical-align: top;
-	max-width: 100%;
+	vertical-align: top; // Alineamos la imagen al top, esto es para que no se vea un espacio debajo de la imagen
+	max-width: 100%; // Hacemos que la imagen no se pase del contenedor
 }

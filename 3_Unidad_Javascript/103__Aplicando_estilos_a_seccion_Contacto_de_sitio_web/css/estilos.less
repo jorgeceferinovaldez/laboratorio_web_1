@@ -425,37 +425,38 @@ header{
 		}
 	}
 
+	/* Contacto */
 	.contacto{
 
 		.datos{
-			padding: 5.625rem 0 11.875rem 0;
-			position: relative;
-			background-image: url('../img/contacto-bg.jpg');
-			background-size: cover;
-			background-position: center;
+			padding: 5.625rem 0 11.875rem 0; // Le doy un padding de 5.625rem arriba, 0 a la derecha, 11.875rem abajo y 0 a la izquierda
+			position: relative; // Posiciono el contenedor de datos para que los elementos internos se posicionen correctamente
+			background-image: url('../img/contacto-bg.jpg'); // Fondo de la sección de contacto
+			background-size: cover; // Hago que la imagen de fondo cubra todo el contenedor
+			background-position: center; // Centrar la imagen de fondo
 
-			.overlay{
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				background: fade(@negro-custom, 30%);
-				top: 0;
-				z-index: 1;
+			.overlay{ // Capa de superposición para oscurecer la imagen de fondo
+				position: absolute; // Posiciono la capa de superposición
+				width: 100%; // Ancho completo
+				height: 100%; // Alto completo
+				background: fade(@negro-custom, 30%); // Color de la superposición con opacidad
+				top: 0; // Posición en la parte superior
+				z-index: 1; // Aseguro que la superposición esté por encima de la imagen de fondo
 			}
 
 			.container{
-				position: relative;
-				z-index: 2;
-				display: flex;
-				justify-content:space-between;
-				flex-wrap: wrap;
+				position: relative; // Es necesario para darle un z-index a los elementos internos. 
+				z-index: 2; // Esto asegura que el contenido esté por encima del overlay anterior. Solo funciona si pongo position relative
+				display: flex; // Utilizo flexbox para alinear los elementos internos
+				justify-content:space-between; // Espacio entre los elementos
+				flex-wrap: wrap; // Permite que los elementos se ajusten en varias líneas si es necesario
 
-				.blurb{
+				.blurb{ // Se llama "blurb" a cada bloque de información
 					background: @blanco;
 					border: 6px double @gris-claro;
-					padding: 2.25rem;
-					text-align: center;
-					width: 25%;
+					padding: 2.25rem; // Padding de 2.25rem a cada lado
+					text-align: center; // Centrar el texto dentro del blurb
+					width: 25%; // Ancho del blurb
 
 					h3{
 						font-size: 1.5rem;
@@ -474,41 +475,41 @@ header{
 		}
 
 		.formulario{
-			position: relative;
-			z-index: 3;
+			position: relative; // Colocamos esto para poder usar el z-index en el contenedor del formulario
+			z-index: 3; // Aseguramos que el formulario esté por encima de los datos de contacto
 			background: @blanco;
 			max-width: 40.625rem;
-			margin: 0 auto;
-			padding: 2.25rem;
-			margin-top: -6.25rem;
-			width: 90%;
+			margin: 0 auto; // Centramos el formulario horizontalmente
+			padding: 2.25rem; // Padding de 2.25rem a cada lado
+			margin-top: -6.25rem; // Lo movemos hacia arriba para que se superponga con la sección de datos de contacto
+			width: 90%; // Ancho del formulario, para que se ajuste en pantallas pequeñas
 
 			.formulario_contacto{
 				.input-group{
-					position: relative;
-					margin-bottom: 2rem;
+					position: relative; // Colocamos esto porque a los labels les daremos una posición absoluta
+					margin-bottom: 2rem; // Margen de 32px entre los grupos de entrada o sea en rem se calcula 32/16 = 2rem
 
-					input[type="text"],
+					input[type="text"], // le daremos estilos a los campos de texto
 					input[type="email"],
 					textarea{
 						font-family: @fuente-secundaria;
 						font-size: 1rem;
 						color: @texto-oscuro;
 						width: 100%;
-						outline: none;
-						padding: 0.9375rem 0;
-						background: none;
-						border: none;
-						border-bottom: 2px solid fade(@dorado, 50%);
-						vertical-align: top;
+						outline: none; // Quitamos el borde azul que aparece al hacer clic
+						padding: 0.9375rem 0; // Agrego poadding de 0.9375rem arriba y abajo, y 0 a los lados
+						background: none; // Sin fondo para que se vea el fondo del formulario
+						border: none; // Sin borde para que se vea el fondo del formulario
+						border-bottom: 2px solid fade(@dorado, 50%); // Borde inferior de 2px de color dorado con opacidad del 50%
+						vertical-align: top; // Alineamos el texto al principio del campo
 
-						&:focus{
+						&:focus{ // Cuando el campo está enfocado
 							border-bottom: 2px solid @dorado;
 						}
 					}
 
-					textarea{
-						max-width: 100%;
+					textarea{ // Le daremos estilos unicos al campo de texto
+						max-width: 100%; 
 						max-height: 10.25rem;
 						min-height: 5.125rem;
 						min-width: 100%;
@@ -518,34 +519,36 @@ header{
 						color: @texto-claro;
 						font-family: @fuente-secundaria;
 
-						&.label{
-							position: absolute;
-							top: 1rem;
-							left: 0;
-							font-size: 1rem;
-							line-height: 1rem;
-							margin-left: 1rem;
-							-webkit-transition: all .3s ease;
+						&.label{ // El & representa el elemento actual, en este caso el label se diferencia del anterior en que tiene la clase "label" 
+							position: absolute; // Colocamos el label en una posición absoluta para que se superponga al campo de entrada
+							top: 1rem; // Lo posicionamos en la parte superior del campo de entrada
+							left: 0; // Lo posicionamos a la izquierda del campo de entrada. Lo colocamos para que ocupe como si fuera el placeholder
+							font-size: 1rem; // Tamaño de fuente del label
+							line-height: 1rem; // Altura de línea del label
+							margin-left: 1rem; // Margen izquierdo del label para que no se superponga al borde del campo de entrada
+							-webkit-transition: all .3s ease; // Transición suave para el cambio de posición y tamaño del label
 							-o-transition: all .3s ease;
 							transition: all .3s ease;
 
-							&.active{
-								top: -0.75rem;
-								margin-left: 0;
-								font-size: 0.75rem;
-								line-height: 0.75rem;
-								color: @texto-claro;
+							&.active{ // Cuando el campo de entrada está enfocado o tiene un valor, el label se mueve hacia arriba
+								top: -0.75rem; // Lo movemos hacia arriba para que no se superponga al campo de entrada
+								margin-left: 0; // Quitamos el margen izquierdo para que no se superponga al borde del campo de entrada
+								font-size: 0.75rem; // Reducimos el tamaño de fuente del label
+								line-height: 0.75rem; // Reducimos la altura de línea del label
+								color: @texto-claro; // Cambiamos el color del label a un tono más claro
 							}
 						}
 					}
 
+					// Creamos un campo de error para mostrar mensajes de error debajo de los campos de entrada
 					.error{
-						position: absolute;
-						color: rgb(255,59,59);
-						font-family: @fuente-secundaria;
-						font-size: 0.875rem;
+						position: absolute; // Colocamos el mensaje de error en una posición absoluta para que se superponga al campo de entrada
+						color: rgb(255,59,59); // Color rojo para el mensaje de error
+						font-family: @fuente-secundaria; // Fuente del mensaje de error
+						font-size: 0.875rem; // Tamaño de fuente del mensaje de error
 					}
-				}
+				} 
+				// Fuera de .input-group
 
 				input[type="submit"]{
 					font-family: @fuente-secundaria;
@@ -553,18 +556,18 @@ header{
 					color: @blanco;
 					border-radius: 1px;
 					border: 2px solid @blanco;
-					cursor: pointer;
-					display: block;
-					margin: 0 auto;
-					margin-top: 3.125rem;
-					padding: 0.9375rem;
-					width: 20%;
-					outline: none;
-					-webkit-transition: all .3s ease;
+					cursor: pointer; // Cambiamos el cursor a pointer para indicar que es un botón clickeable
+					display: block; // Hacemos que el botón sea un bloque para que ocupe todo el ancho disponible
+					margin: 0 auto; // Centramos el botón horizontalmente
+					margin-top: 3.125rem; // Margen superior de 3.125rem para separar el botón del resto del formulario
+					padding: 0.9375rem; // Padding de 0.9375rem arriba y abajo, y 0 a los lados
+					width: 20%; // Ancho del botón del 20% del contenedor
+					outline: none; // Quitamos el borde azul que aparece al hacer clic
+					-webkit-transition: all .3s ease; // Transición suave para el cambio de color del botón
 					-o-transition: all .3s ease;
 					transition: all .3s ease;
 
-					&:hover{
+					&:hover{ // Cuando el botón está en estado hover
 						background: darken(@dorado, 10%);
 					}
 				}

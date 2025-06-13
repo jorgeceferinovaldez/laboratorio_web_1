@@ -1,8 +1,9 @@
 /*-------------------------------------*/
+/* 1. Creare variables como javascript */
 /*Variables*/
 /*-------------------------------------*/
 
-/*Colores*/
+/*1.a Colores*/
 @negro-custom: #141618;
 @blanco: #fff;
 @texto-oscuro: #303133;
@@ -10,184 +11,198 @@
 @dorado: #b4975a;
 @gris-claro: #eaeaea;
 
-/*Fuentes*/
+/* 1.b Fuentes*/
 @fuente-principal: 'Playfair Display', serif;
 @fuente-secundaria: 'Poppins', serif;
 
 /*-------------------------------------*/
-/*Generales*/
+/* 2. Creo los estilos Generales*/
 /*-------------------------------------*/
 
+// 2.a Estilos Generales
 *{
 	margin:0;
 	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box; // Lo hacemos cuando le digamos que tenga un ancho de 200px y le agregemos padding el ancho siga siendo 200px
+	-moz-box-sizing: border-box; // Agregamos compatibilidad con Firefox
+	box-sizing: border-box; 
 }
 
+// 2.b Estilos de la fuente
 body{
 	font-size: 16px;
-	font-family: @fuente-principal;
-	color: @texto-oscuro;
+	font-family: @fuente-principal; // Usamos la variable de la fuente principal
+	color: @texto-oscuro; // Usamos la variable del color de texto oscuro
 }
 
+// 2.c Estilo del contenedor
 .container{
 	width: 90%;
 	max-width: 1080px;
-	margin: 0 auto;
+	margin: 0 auto; // Centramos el contenedor
 }
 
+// 2.d Estilo de las imágenes
 img{
-	vertical-align: top;
-	max-width: 100%;
+	vertical-align: top; // Alineamos la imagen al top, esto es para que no se vea un espacio debajo de la imagen
+	max-width: 100%; // Hacemos que la imagen no se pase del contenedor
 }
 
+// 4. Cambio el estilo de los enlaces
 a{
-	text-decoration: none;
-	color: @texto-oscuro;
-	-webkit-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
+	text-decoration: none; // Quitar el subrayado de los enlaces
+	color: @texto-oscuro; // Usamos la variable del color de texto oscuro
+	-webkit-transition: all .3s ease; // Agregamos compatibilidad con Safari. 
+	-o-transition: all .3s ease; // Agregamos compatibilidad con Opera
+	transition: all .3s ease; // Esta transición es para que los enlaces cambien de color al pasar el mouse por encima
 
-	&:hover{
-		color: fade(@texto-oscuro, 50%);
+	&:hover{ // Coloco & para que sepa que es un pseudo elemento
+		color: fade(@texto-oscuro, 50%); // Cambiamos el color del enlace al pasar el mouse por encima. El fade es para que el color se vea más claro
 	}
 }
 
 
 /*-------------------------------------*/
-/*Encabezado*/
+/* 3. Estilo del encabezado 		   */
+/* Encabezado 						   */
 /*-------------------------------------*/
 
 header{
 
-	.menu-bar-pc{
+	// 3.a Estilo del encabezado
+	.menu-bar-pc{ // accedo a la clase menu-bar-pc
 		background: @blanco;
 		width: 100%;
-		position: fixed;
-		z-index: 99;
-		top: 0;
-		padding: 0 2.25rem;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-		min-height: 5.875rem;
-		border-bottom: 1px solid @gris-claro;
+		position: fixed; // Fijo el encabezado, no se mueve al hacer scroll
+		z-index: 99; // Coloco el encabezado por encima de los demás elementos  
+		top: 0; // Coloco el encabezado en la parte superior
+		padding: 0 2.25rem; // Agrego un padding a los lados. Se calcula en rem, 1rem = 16px, o sea 2.25rem = 36px
+		display: flex; // Hago que el encabezado sea un flexbox, esto me permite alinear los elementos dentro del encabezado
+		flex-direction: row; // Coloco los elementos en fila
+		justify-content: space-between; // Le doy un espacio entre los elementos
+		align-items: center; // Alineo los elementos al centro
+		min-height: 5.875rem; // Le doy una altura mínima al encabezado, esto es para que el encabezado no se achique al hacer scroll. Se calcula en rem, 1rem = 16px, o sea 5.875rem = 94px
+		border-bottom: 1px solid @gris-claro; // Le doy un borde inferior al encabezado, esto es para que se vea más bonito
 
+		// 3.b Estilo del logo
 		.logo{
-			max-width: 3.125rem;
+			max-width: 3.125rem; // Le doy un ancho máximo al logo, esto es para que el logo no se pase del contenedor. Se calcula en rem, 1rem = 16px, o sea 3.125rem = 50px
 		}
 
+		// 3.c Estilo del menú principal
 		.menu-principal{
 
 			a{
-				padding: 0 0.5625rem;
+				padding: 0 0.5625rem; // Le doy un padding a los lados de los enlaces del menú principal. Se calcula en rem, 1rem = 16px, o sea 0.5625rem = 9px
 			}
 		}
 
 		.top-redes{
 			a{
-				padding: 0 0.5625rem;
+				padding: 0 0.5625rem; // Le doy un padding a los lados de los enlaces de las redes sociales. Se calcula en rem, 1rem = 16px, o sea 0.5625rem = 9px
 			}
 		}
 	}
 }
 
+
 /*-------------------------------------*/
-/*Main*/
+/* 5. Estilos a main				   */
+/* Main								   */
 /*-------------------------------------*/
 
 .main{
-	margin-top: 5.875rem;
+	/* 5.a Estilo del contenedor principal */
+	margin-top: 5.875rem; // Le doy la misma altura que el encabezado, esto es para que el contenido no se superponga al encabezado. Se calcula en rem, 1rem = 16px, o sea 5.875rem = 94px
 
-	/*Portada*/
+	/* 5.b. Portada*/
 	.portada{
-		display: flex;
-		flex-wrap: wrap;
-		justify-content:space-between;
+		display: flex; // Hago que la portada sea un flexbox, esto me permite alinear los elementos dentro de la portada
+		flex-wrap: wrap; // Hago que los elementos se ajusten al tamaño de la pantalla
+		justify-content:space-between; // Le doy un espacio entre los elementos
 
+		/* 5.c. Estilos de las columnas */
 		.col{
-			width: 50%;
-			background: @negro-custom;
-			color: @blanco;
-			display: flex;
-			flex-wrap: wrap;
+			width: 50%; // Le doy un ancho del 50% a las columnas, esto es para que se vean dos columnas en la portada
+			background: @negro-custom; // Le doy un color de fondo al contenedor de la portada, esto es para que se vea más bonito
+			color: @blanco; 
+			display: flex; // Hago que el contenedor de la portada sea un flexbox, esto me permite alinear los elementos dentro del contenedor
+			flex-wrap: wrap; // Hago que los elementos se ajusten al tamaño de la pantalla
 
+			/*5.d Estilos de las fotos */
 			.foto{
-				background-size: cover;
-				background-position: center;
-				width: 50%;
+				background-size: cover; // Hago que la imagen de fondo cubra todo el contenedor
+				background-position: center; // Alineo la imagen de fondo al centro
+				width: 50%; // Le doy un ancho del 50% a las fotos, esto es para que se vean dos fotos en la portada
 
-				&.izq{
-					background-image: url('../img/portada-1.jpg');
-					background-position: left;
+				&.izq{ // Con & accedo a la clase izq
+					background-image: url('../img/portada-1.jpg'); // Le doy una imagen de fondo a la foto izquierda
+					background-position: left; // Alineo la imagen de fondo a la izquierda
 				}
 
-				&.der{
-					background-image: url('../img/portada-4.jpg');
-					opacity: 0.8;
+				&.der{ // Con & accedo a la clase der
+					background-image: url('../img/portada-4.jpg'); // Le doy una imagen de fondo a la foto derecha
+					opacity: 0.8;  // Le doy una opacidad a la foto derecha, esto es para que se vea más bonito
 				}
 
 				.overlay{
-					opacity: 0;
-					width: 100%;
-					height: 100%;
-					background: fade(@negro-custom, 40%);
-					position: relative;
-					cursor: pointer;
-					-webkit-transition: all .3s ease;
+					opacity: 0; // Le doy una opacidad de 0 a la superposición, esto es para que no se vea al principio
+					width: 100%; // Le doy un ancho del 100% a la superposición, esto es para que cubra todo el contenedor
+					height: 100%; // Le doy una altura del 100% a la superposición, esto es para que cubra todo el contenedor
+					background: fade(@negro-custom, 40%); // Le doy transparencia a un color que tengamos, en este caso @negro-custom
+					position: relative; // Coloco la superposición en relación al contenedor, es para luego poder centrar el icono +
+					cursor: pointer; // Cambiamos el cursor al pasar el mouse por encima se vea como un enlace
+					-webkit-transition: all .3s ease; // Agregamos una transición al pasar el mouse por encima, esto es para que la superposición se vea más bonita
 					-o-transition: all .3s ease;
 					transition: all .3s ease;
 
-					&:hover{
-						opacity: 1;
+					&:hover{ // Con & accedo a la superposición al pasar el mouse por encima
+						opacity: 1; // Le doy una opacidad de 1 a la superposición, esto es para que se vea al pasar el mouse por encima
 					}
 
-					i{
-						position: absolute;
-						top: 50%;
-						left: 50%;
-						transform: translate(-50%, -50%);
-						font-size: 1.5625rem;
+					i{ //Accedemos al icono +
+						position: absolute; // 1ero. Coloco el icono en relación al contenedor, es para luego poder centrar el icono +. Lo dejamos ahi y haremos primero el texto.	
+						top: 50%; // Coloco top al 50% del contenedor para centrar el icono
+						left: 50%; // Coloco left al 50% del contenedor para centrar el icono
+						transform: translate(-50%, -50%); // Este es un truco para centrar el icono, esto es para que el icono se vea centrado al 50% del contenedor
+						font-size: 1.5625rem; // Le doy un tamaño de fuente al icono, esto es para que se vea más grande
 					}
 				}
 			}
 
-			.texto{
-				width: 50%;
-				padding: 3.375rem;
+			.texto{ // 2do. Accedemos al texto
+				width: 50%; // Le doy un ancho del 50% al texto, esto es para que se vea dos columnas en la portada
+				padding: 3.375rem; // Le doy un padding al texto, esto es para que se vea más bonito
 
 				h2{
-					font-size: 1.8125rem;
-					font-weight: 400;
-					line-height: 2.6875rem;
-					margin-bottom: 1.125rem;
+					font-size: 1.8125rem; // Le doy un tamaño de fuente al título.
+					font-weight: 400; // Le doy un peso de fuente al título.
+					line-height: 2.6875rem; // Le doy un interlineado al título.
+					margin-bottom: 1.125rem; // Le doy un margen inferior al título.
 				}
 
 				p{
-					font-size: 0.9375rem;
-					line-height: 1.75;
+					font-size: 0.9375rem; // Le doy un tamaño de fuente al párrafo.
+					line-height: 1.75; // Le doy un interlineado al párrafo.
 				}
 			}
 
-			.foto-full{
-				width: 100%;
-				min-height: 15.25rem;
-				background-size: cover;
-				background-position: center;
+			.foto-full{ // daremos estilos a la foto que ocupa todo el ancho
+				width: 100%; // Le doy un ancho del 100% a la foto, esto es para que ocupe todo el ancho del contenedor
+				min-height: 15.25rem; // Le doy una altura mínima a la foto, esto es para que la foto no se achique al hacer scroll. Se calcula en rem, 1rem = 16px, o sea 15.25rem = 244px
+				background-size: cover; // Hago que la imagen de fondo cubra todo el contenedor
+				background-position: center; // Alineo la imagen de fondo al centro
 
-				&.izq{
+				&.izq{ // Accedo a la clase izq
 					background-image: url('../img/portada-2.jpg');
-					opacity: 0.8;
+					opacity: 0.8; // Le doy una opacidad a la foto izquierda.
 				}
 
-				&.der{
+				&.der{ // Accedo a la clase der
 					background-image: url('../img/portada-3.jpg');
 				}
 
-				.overlay{
+				.overlay{ // Copiamos el anterior overlay
 					opacity: 0;
 					width: 100%;
 					height: 100%;

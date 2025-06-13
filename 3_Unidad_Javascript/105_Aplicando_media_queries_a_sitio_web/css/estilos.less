@@ -605,113 +605,117 @@ footer{
 /*Media Queries*/
 /*-------------------------------------*/
 
-@media all and (max-width: 1500px){
+@media all and (max-width: 1500px){ // Para pantallas menores a 1500px
 	.main{
 		.portada{
 			.col{
 				.texto{
-					padding-left: 2.25rem;
-					padding-right: 2.25rem;
+					padding-left: 2.25rem; // Cambio el padding, el espacio que tiene a la izquierda y derecha para que se vea mejor en pantallas más pequeñas
+					padding-right: 2.25rem;// Cambio el padding, el espacio que tiene a la izquierda y derecha para que se vea mejor en pantallas más pequeñas
 				}
 			}
 		}
 	}
 }
 
-@media all and (max-width: 1199px){
-	.main .portada .col .foto{
-		display: none;
+@media all and (max-width: 1199px){ // Achico el tamaño de la pantalla a 1199px y genero un nuevo media query
+	// Vamos a eliminar la foto de la porta de arriba a la izquierda y la de abajo a la derecha
+
+	.main .portada .col .foto{ // Tomo la ruta inspectando el elemento desde chrome
+		display: none; // La oculto
 	}
 	.main .portada .col .texto{
-		width: 100%;
+		width: 100%; // Pero al ocultarla, la columna de texto se queda con el 50% de ancho, por lo que le doy el 100% para que ocupe todo el espacio
 	}
 }
 
 @media all and (max-width: 980px){
-	.main .nosotros .container .col.izq{
-		width: 100%;
-		border-right: none;
-		border-bottom: 1px solid @gris-claro;
-		text-align: center;
-		display: block;
-		padding: 0;
-		margin-bottom: 2.25rem;
+	// Aplicaremos estilos a la sección de nosotros
+	.main .nosotros .container .col.izq{ // Seleccionamos la columna izquierda de la sección nosotros
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
+		border-right: none; // Quitamos el borde derecho para que no se vea
+		border-bottom: 1px solid @gris-claro; // Agregamos un borde inferior para que se vea mejor en pantallas más pequeñas
+		text-align: center; // Centramos el texto para que se vea mejor en pantallas más pequeñas
+		display: block; // Cambiamos el display a block para que ocupe todo el espacio disponible
+		padding: 0; // Quitamos el padding para que no se vea espacio extra
+		margin-bottom: 2.25rem; // Agregamos un margen inferior para que se vea mejor en pantallas más pequeñas
 	}
 
-	.main .nosotros .container .col.der{
-		width: 100%;
-		padding-left: 0;
-		text-align: justify;
+	.main .nosotros .container .col.der{ // Seleccionamos la columna derecha de la sección nosotros
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
+		padding-left: 0; // Quitamos el padding izquierdo para que no se vea espacio extra
+		text-align: justify; // Centramos el texto para que se vea mejor en pantallas más pequeñas
 	}
 
-	.main .contacto .datos .container .blurb{
-		width: 100%;
-		max-width: 40.625rem;
-		margin: 0 auto;
-		margin-bottom: 2.25rem;
+	// Ahora aplicamos estilos a la sección contacto o sea los blurbs
+	.main .contacto .datos .container .blurb{ // Seleccionamos los blurbs de la sección contacto
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
+		max-width: 40.625rem; // Le damos un ancho máximo para que no se estire demasiado
+		margin: 0 auto; // Centramos el blurb
+		margin-bottom: 2.25rem; // Agregamos un margen inferior para que se vea mejor en pantallas más pequeñas
 
-		&:last-child{
-			margin-bottom: 0;
+		&:last-child{ // Seleccionamos el último blurb
+			margin-bottom: 0; // Quitamos el margen inferior para que no se vea espacio extra
 		}
 	}
 }
 
 @media all and (max-width: 800px){
-	.main .portada .col{
-		width: 100%;
+	.main .portada .col{ // Seleccionamos las columnas de la portada
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
 
-		.foto-full.izq{
-			display: none;
+		.foto-full.izq{ // Seleccionamos la foto de la izquierda
+			display: none; // La ocultamos para que no se vea en pantallas más pequeñas
 		}
 
-		.texto{
+		.texto{ // Seleccionamos el texto de la portada
 			h2{
-				text-align: center;
+				text-align: center; // Centramos el título para que se vea mejor en pantallas más pequeñas
 			}
 
 			p{
-				text-align: justify;
+				text-align: justify; // Centramos el párrafo para que se vea mejor en pantallas más pequeñas
 			}
 		}
 	}
 
-	.main .chef .container .col{
-		width: 100%;
+	.main .chef .container .col{ // Seleccionamos las columnas de la sección chef
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
 	}
 
-	.main .chef .container .col .titulo-seccion{
-		padding-left: 0;
-		padding-bottom: 0;
-		text-align: center;
+	.main .chef .container .col .titulo-seccion{ // Seleccionamos el título de la sección chef
+		padding-left: 0; // Quitamos el padding izquierdo para que no se vea espacio extra
+		padding-bottom: 0; // Quitamos el padding inferior para que no se vea espacio extra
+		text-align: center; // Centramos el título para que se vea mejor en pantallas más pequeñas
 	}
 }
 
-@media all and (max-width: 580px){
-	.titulo-seccion{
+@media all and (max-width: 580px){ // A partir de 580px aplicamos nuevos estilos, los titulos y textos se ven muy grandes en un celular
+	.titulo-seccion{ // Seleccionamos el título de la sección
 		h2{
-			font-size: 2rem;
+			font-size: 2rem; // Cambiamos el tamaño de la fuente a 2rem para que se vea mejor en pantallas más pequeñas
 		}
 	}
 
-	.main .nosotros .container .col.der .texto p{
-		font-size: 1rem;
+	.main .nosotros .container .col.der .texto p{ // Seleccionamos el párrafo de la sección nosotros
+		font-size: 1rem; // Cambiamos el tamaño de la fuente a 1rem para que se vea mejor en pantallas más pequeñas
 	}
 
-	.main .chef .container .col .titulo-seccion p{
-		font-size: 1rem;
+	.main .chef .container .col .titulo-seccion p{ // Seleccionamos el párrafo de la sección chef
+		font-size: 1rem; // Cambiamos el tamaño de la fuente a 1rem para que se vea mejor en pantallas más pequeñas
 	}
 
-	.main .menu-platos .container .contenedor-menu .contenido .item .col.izq{
-		width: 100%;
-		text-align: center;
-		margin-bottom: 0.625rem;
+	.main .menu-platos .container .contenedor-menu .contenido .item .col.izq{ // Seleccionamos la columna izquierda de los items del menú
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
+		text-align: center; // Centramos el texto para que se vea mejor en pantallas más pequeñas
+		margin-bottom: 0.625rem; // Agregamos un margen inferior para que se vea mejor en pantallas más pequeñas
 	}
 
-	.main .menu-platos .container .contenedor-menu .contenido .item .col.der{
-		width: 100%;
+	.main .menu-platos .container .contenedor-menu .contenido .item .col.der{ // Seleccionamos la columna derecha de los items del menú
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
 	}
 
-	.main .contacto .formulario .formulario_contacto input[type=submit]{
-		width: 100%;
+	.main .contacto .formulario .formulario_contacto input[type=submit]{ // Seleccionamos el botón de envío del formulario de contacto
+		width: 100%; // Le damos el 100% de ancho para que ocupe todo el espacio
 	}
 }

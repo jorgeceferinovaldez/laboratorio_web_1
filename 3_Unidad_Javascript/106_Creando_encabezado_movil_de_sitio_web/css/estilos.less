@@ -110,6 +110,8 @@ header{
 		}
 	}
 
+	// 1ero. Una vez que cree el encabezado móvil en el html debere agregar la clase "menu-bar-movil" al 
+	// encabezado para que se aplique el estilo correspondiente.
 	.menu-bar-movil{
 		background: @blanco;
 		width: 100%;
@@ -129,12 +131,12 @@ header{
 		}
 
 		.burger-menu{
-			cursor: pointer;
-			font-size: 2.1875rem;
+			cursor: pointer; // Icono de menú hamburguesa
+			font-size: 2.1875rem; // Tamaño del icono
 		}
 
-		.slideMenu{
-			position: fixed;
+		.slideMenu{ // Menú deslizable
+			position: fixed; // Posición fija para que se deslice desde el lado
 			top: 5.875rem;
 			left: -80%;
 			background: @blanco;
@@ -158,7 +160,7 @@ header{
 
 			.menu-principal{
 				a{
-					display: block;
+					display: block; // Uno encima el otro
 					padding: 0.625rem 0;
 					border-top: 1px solid @gris-claro;
 				}
@@ -712,14 +714,15 @@ footer{
 	}
 }
 
+// 2do. Modifico el encabezado móvil para que se muestre en pantallas menores a 800px.
 @media all and (max-width: 800px){
-	header{
-		.menu-bar-pc{
-			display: none;
+	header{ // 2.a accedo al encabezado
+		.menu-bar-pc{ // agrego la clase del encabezado de escritorio
+			display: none; // oculto el encabezado de escritorio
 		}
 
-		.menu-bar-movil{
-			display: flex;
+		.menu-bar-movil{ // 2.b accedo al encabezado móvil
+			display: flex; // lo muestro
 		}
 	}
 

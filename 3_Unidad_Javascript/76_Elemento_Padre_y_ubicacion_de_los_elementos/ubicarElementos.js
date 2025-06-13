@@ -10,7 +10,7 @@ nuevoParrafo.appendChild(textoNuevo);
 // 4to. Agregar un nuevo atributo de clase
 nuevoParrafo.setAttribute('class', 'texto');
 
-// var contenedor = document.getElementsByClassName('contenedor')[0];
+var contenedor = document.getElementsByClassName('contenedor')[0];
 
 
 
